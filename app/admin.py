@@ -6,3 +6,5 @@ class TodoAdmin(admin.ModelAdmin):
     list_display = ['name','subject','email','address']
 
 admin.site.register(Todo,TodoAdmin)
+admin.site.register(User)
+admin.site.register(Todo1)
