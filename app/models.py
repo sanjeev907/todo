@@ -20,3 +20,11 @@ class User(models.Model):
 class Todo1(models.Model):
     Name = models.CharField(max_length=50)
 
+class TodoTask(models.Model):
+    name = models.CharField(max_length=50)
+    task = models.CharField(max_length=100)
+    email = models.CharField(max_length=150)
+    address_status = models.CharField(max_length=100)
+    status = models.CharField(max_length=100)
+    date = models.DateField()
+
