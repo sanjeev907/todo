@@ -17,10 +17,27 @@ services:
   web:
     image: sanjeevstory/todo:tagname
     container_name: todo
-    ports:
-      - "8000:8000"
+    volumes:
+      - .:/todo  # Optional, if you need to map local files
+    expose:
+      - "8000"  # Expose port 8000 for Nginx to communicate with the Django app
     command: >
       bash -c "python manage.py makemigrations || exit 1 && 
                python manage.py migrate || exit 1 && 
                python manage.py runserver 0.0.0.0:8000"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80" 
+    depends_on:
+      - web
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf 
+    networks:
+      - webnet
+
+networks:
+  webnet:
 
