@@ -17,6 +17,9 @@ class User(models.Model):
     address = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
+
 class Todo1(models.Model):
     Name = models.CharField(max_length=50)
 
