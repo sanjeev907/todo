@@ -6,3 +6,5 @@ class TodoSerializers(serializers.Serializer):
     subject = serializers.CharField(required = True, error_messages={'subject':'subject is required'})
     email = serializers.CharField(required = True, error_messages={'email':'email is required'})
     address = serializers.CharField(required = True, error_messages={'address':'address is required'})
+
+    
