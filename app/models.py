@@ -31,3 +31,6 @@ class TodoTask(models.Model):
     status = models.CharField(max_length=100)
     date = models.DateField()
 
+    def __str__(self):
+        return self.name
+
