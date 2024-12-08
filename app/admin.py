@@ -14,7 +14,9 @@ class Todo1Admin(admin.ModelAdmin):
 
 class TodoTaskAdmin(admin.ModelAdmin):
     list_display = ['name','task','email','address_status','status','date']
-    
+    search = ('name')
+
+
 admin.site.register(Todo,TodoAdmin)
 admin.site.register(User)
 admin.site.register(Todo1,Todo1Admin)
