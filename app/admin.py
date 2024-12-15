@@ -5,6 +5,7 @@ from .models import *
 
 class TodoAdmin(admin.ModelAdmin):
     list_display = ['name','subject','email','address']
+    search = ['name']
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ['name','email','password','address','phone']
