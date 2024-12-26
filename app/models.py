@@ -31,3 +31,14 @@ class TodoTask(models.Model):
     status = models.CharField(max_length=100)
     date = models.DateField()
 
+
+class TodoTask1(models.Model):
+    name = models.CharField(max_length=50)
+    task = models.CharField(max_length=100)
+    email = models.CharField(max_length=150)
+    address_status = models.CharField(max_length=100)
+    status = models.CharField(max_length=100)
+    date = models.DateField()
+
+    def __str__(self):
+        return self.task
