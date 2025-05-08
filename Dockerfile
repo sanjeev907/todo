@@ -1,36 +1,36 @@
-# FROM python:3.10.6-slim-buster
+FROM python:3.10.6-slim-buster
 
-# WORKDIR /todo
+WORKDIR /todo
 
-# COPY requirements.txt requirements.txt
+COPY requirements.txt requirements.txt
 
-# RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
-# COPY . .
+COPY . .
 
-# EXPOSE 8000
+EXPOSE 8000
 
-# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8010"]
 
 
 
 # Dockerfile
 
-FROM python:3.10-slim
+# FROM python:3.10-slim
 
-# ENV PYTHONDONTWRITEBYTECODE 1
-# ENV PYTHONUNBUFFERED 1
+# # ENV PYTHONDONTWRITEBYTECODE 1
+# # ENV PYTHONUNBUFFERED 1
 
-WORKDIR /todo-lastest
+# WORKDIR /todo-lastest
 
-COPY requirements.txt .
-RUN pip install --upgrade pip && pip install -r requirements.txt
+# COPY requirements.txt .
+# RUN pip install --upgrade pip && pip install -r requirements.txt
 
-COPY . .
+# COPY . .
 
-RUN mkdir -p /vol/web/media /vol/web/static
+# RUN mkdir -p /vol/web/media /vol/web/static
 
-COPY ./entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+# COPY ./entrypoint.sh /entrypoint.sh
+# RUN chmod +x /entrypoint.sh
 
-CMD ["/entrypoint.sh"]
+# CMD ["/entrypoint.sh"]
