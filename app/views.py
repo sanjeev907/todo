@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import *
-from .serializers import TodoSerializers
+from .serializers import TodoSerializers, TodoViewSerializers
 from django.http import HttpResponse
 from rest_framework.response import Response
 from django.contrib.auth.hashers import make_password,check_password
@@ -16,7 +16,7 @@ def home(request):
 
 class TodoAPIView(ListAPIView):
     queryset = Todo.objects.all()
-    serializer_class = TodoViewSerializer
+    serializer_class = TodoViewSerializers
 
 
 
