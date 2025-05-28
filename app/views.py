@@ -6,10 +6,18 @@ from rest_framework.response import Response
 from django.contrib.auth.hashers import make_password,check_password
 from django.http import JsonResponse
 from rest_framework import generics
+from rest_framework.generics import ListAPIView
 # Create your views here.
 
 def home(request):
     return HttpResponse("hello world")
+
+
+
+class TodoAPIView(ListAPIView):
+    queryset = Todo.objects.all()
+    serializer_class = TodoViewSerializer
+
 
 
 class TodoView(generics.GenericAPIView):
