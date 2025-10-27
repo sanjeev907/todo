@@ -83,4 +83,4 @@ RUN python manage.py collectstatic --noinput
 EXPOSE 8000
 
 # Run Gunicorn
-CMD ["gunicorn", "todo_app.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "todo.wsgi:application", "--bind", "0.0.0.0:8000"]
